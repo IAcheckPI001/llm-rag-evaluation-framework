@@ -1,0 +1,7 @@
+
+
+pydantic
+pandas
+pyarrow
+pytest
+pyyaml

@@ -96,6 +96,16 @@ llm-rag-evaluation-framework/
 
 ## 6. Installation
 
-**Prerequisites**
-[Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
+mkdir llm-rag-evaluation-framework
+cd llm-rag-evaluation-framework
 
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+
+mkdir app configs data dashboard reports tests
+mkdir app\core app\services app\metrics app\storage
+mkdir data\raw data\processed data\results data\db
+
+type nul > README.md
+type nul > requirements.txt
+type nul > .gitignore
