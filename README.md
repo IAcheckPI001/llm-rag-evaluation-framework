@@ -21,9 +21,21 @@ This framework bridges this gap by supporting three evaluation modes:
 
 ## 3. Evaluation Pipeline
 
-[Data Loading] -> [Pre-processing] -> [Evaluation] -> [Analysis] -> [Visualization]
-      |                |                |               |              |
-   Load/Val       Schema/Mode      Local/Judge     Failure Class    Report/Dash
+graph TD
+    A[Load dataset / RAG logs] --> B[Validate schema]
+    B --> C[Normalize records]
+    C --> D[Enrich metadata]
+    D --> E[Detect evaluation mode]
+    E --> F[Compute metrics]
+    F --> G[Classify failures]
+    G --> H[Aggregate & Report]
+    H --> I[Build Dashboard]
+    I --> J[Compare runs]
+
+    subgraph Evaluation
+    F --> F1[Local metrics]
+    F --> F2[Judge-based metrics]
+    end
 
 ## 4. Tech Stack
 
@@ -45,7 +57,7 @@ This framework bridges this gap by supporting three evaluation modes:
 | Optional CI/CD | GitHub Actions | Tự chạy eval nhỏ khi update pipeline |
 
 ## 5. Initial Project Structure
-
+```yaml
 llm-rag-evaluation-framework/
 │
 ├── app/
@@ -90,6 +102,7 @@ llm-rag-evaluation-framework/
 ├── requirements.txt
 ├── README.md
 └── Dockerfile
+```
 
 ## 6. Installation
 
