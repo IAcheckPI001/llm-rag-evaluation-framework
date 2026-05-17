@@ -1,0 +1,18 @@
+# estimated_cost_usd =
+#       input_tokens / 1_000_000 × input_price_per_1m +
+#       output_tokens / 1_000_000 × output_price_per_1m
+
+default_model: gpt-4o-mini
+
+models:
+  gpt-4o-mini:
+    input_price_per_1m_tokens: 0.15
+    output_price_per_1m_tokens: 0.60
+
+  gpt-4o:
+    input_price_per_1m_tokens: 2.50
+    output_price_per_1m_tokens: 10.00
+
+  unknown:
+    input_price_per_1m_tokens: 0.0
+    output_price_per_1m_tokens: 0.0
